@@ -1,0 +1,16 @@
+
+version: '3'
+services:
+  nginx:
+   container_name: factorio
+   image: factoriotools/factorio:latest
+   deploy:
+    replicas: 1
+   restart: always
+   ports:
+   - 27015:27015/tcp
+   - "34197:34197/udp"
+   volumes:
+    - factorio_volume:/factorio
+volumes:
+  factorio_volume:
